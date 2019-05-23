@@ -4,7 +4,8 @@
       <i class="pi pi-bars"> </i>
     </a>
     <a href="#" class="logo" [routerLink]="['/']">
-      <img alt="logo" src="assets/showcase/images/logo.png" />
+      <!--<img alt="logo" src="assets/showcase/images/logo.png"/>-->
+
     </a>
 
     <ul class="topbar-menu">
@@ -16,14 +17,13 @@
         <ul>
           <li class="topbar-submenu-header">THEMING</li>
           <li><a [routerLink]="['./theming']"><span class="topbar-submenu-icon fa fa-book"></span>Guide</a></li>
-          <li><a href="https://www.primefaces.org/designer/primeng"><span class="topbar-submenu-icon fa fa-paint-brush"></span>Designer <span class="menuitem-badge">NEW</span></a></li>
-          <li><a [routerLink]="['./icons']"><span class="topbar-submenu-icon fa fa-info-circle"></span>Icons <span class="menuitem-badge">NEW</span></a></li>
+          <li><a href="https://www.primefaces.org/designer/primeng"><span
+            class="topbar-submenu-icon fa fa-paint-brush"></span>Designer <span class="menuitem-badge">NEW</span></a>
+          </li>
+          <li><a [routerLink]="['./icons']"><span class="topbar-submenu-icon fa fa-info-circle"></span>Icons <span
+            class="menuitem-badge">NEW</span></a></li>
           <li class="topbar-submenu-header">PREMIUM</li>
-          <li><a href="http://www.primefaces.org/layouts/avalon-ng"><img src="assets/showcase/images/themeswitcher-avalon.png" alt="Avalon (Bootstrap)"><span class="ui-text">Avalon <span class="theme-badge bootstrap">bootstrap</span></span></a></li>
           <li class="topbar-submenu-header" style="margin-top:16px">FREE</li>
-          <li><a href="#" (click)="changeTheme($event, 'nova-light', false)"><img src="assets/showcase/images/themeswitcher-nova-light.png" alt="Nova Light"><span class="ui-text">Nova Light</span></a></li>
-          <li><a href="#" (click)="changeTheme($event, 'luna-pink', true)"><img src="assets/showcase/images/themeswitcher-luna-pink.png" alt="Luna Pink"><span class="ui-text">Luna Pink</span></a></li>
-          <li><a href="#" (click)="changeTheme($event, 'rhea', false)"><img src="assets/showcase/images/themeswitcher-rhea.png" alt="Luna Pink"><span class="ui-text">Rhea</span></a></li>
         </ul>
       </li>
       <li>
@@ -48,20 +48,24 @@
         <i class="pi pi-search"></i>
       </div>
 
-      <a id="button_menutitle" #buttonmenutitle [class.active-menuitem]="buttonmenutitle.id == activeMenuId" (click)="activeMenuId = (activeMenuId === buttonmenutitle.id ? null : buttonmenutitle.id)">
+      <a id="button_menutitle" #buttonmenutitle [class.active-menuitem]="buttonmenutitle.id == activeMenuId"
+         (click)="activeMenuId = (activeMenuId === buttonmenutitle.id ? null : buttonmenutitle.id)">
         <i class="pi pi-video"> </i>
         Peliculas
       </a>
-      <div [ngClass]="{'submenushow': (buttonmenutitle.id == activeMenuId), 'submenuhide': (buttonmenutitle.id != activeMenuId)}">
+      <div
+        [ngClass]="{'submenushow': (buttonmenutitle.id == activeMenuId), 'submenuhide': (buttonmenutitle.id != activeMenuId)}">
         <a [routerLink]="['/pelicula']" (click)="menuActive = false">&#9679; Listado</a>
         <a [routerLink]="['/pelicula/scan']" (click)="menuActive = false">&#9679; Actualizar</a>
       </div>
 
-      <a id="button_source_title" #button_source_title [class.active-menuitem]="button_source_title.id == activeMenuId" (click)="activeMenuId = (activeMenuId === button_source_title.id ? null : button_source_title.id)">
+      <a id="button_source_title" #button_source_title [class.active-menuitem]="button_source_title.id == activeMenuId"
+         (click)="activeMenuId = (activeMenuId === button_source_title.id ? null : button_source_title.id)">
         <i class="pi pi-folder 8rodhko    "> </i>
         Fuente
       </a>
-      <div [ngClass]="{'submenushow': (button_source_title.id == activeMenuId), 'submenuhide': (button_source_title.id != activeMenuId)}">
+      <div
+        [ngClass]="{'submenushow': (button_source_title.id == activeMenuId), 'submenuhide': (button_source_title.id != activeMenuId)}">
         <a [routerLink]="['/fuente']" (click)="menuActive = false">&#9679; Actualizar</a>
         <a [routerLink]="['/fuente/configurar']" (click)="menuActive = false">&#9679; Actualizar</a>
       </div>
@@ -87,3 +91,4 @@
       </div>
 
     </div>
+  </div>

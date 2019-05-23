@@ -6,7 +6,8 @@ import {
   ProgressBarModule,
   SidebarModule,
   SplitButtonModule,
-  ToolbarModule
+  ToolbarModule,
+  ListboxModule
 } from 'primeng/primeng';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {SlideMenuModule} from 'primeng/slidemenu';
@@ -21,7 +22,8 @@ const MODULES = [
   ToolbarModule,
   SplitButtonModule,
   AutoCompleteModule,
-  ProgressBarModule
+  ProgressBarModule,
+  ListboxModule
 ];
 
 @NgModule({
