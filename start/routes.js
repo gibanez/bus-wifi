@@ -19,4 +19,6 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 Route.group(() => {
   Route.resource('movie', 'MovieController');
+  Route.get('media/sync', 'MediaController.sync').as('media.sync');
+  Route.resource('media', 'MediaController');
 }).prefix('api');
