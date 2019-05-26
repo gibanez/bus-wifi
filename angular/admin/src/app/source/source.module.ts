@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 import {PrimeModule} from 'src/app/prime/prime.module';
 import {SharedModule} from 'src/app/shared/shared.module';
 
@@ -12,6 +13,7 @@ import { IndexComponent } from './index/index.component';
     CommonModule,
     SourceRoutingModule,
     SharedModule,
+    FormsModule,
     PrimeModule
   ]
 })

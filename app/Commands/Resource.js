@@ -74,20 +74,8 @@ module.exports = ${name}Service`;
   async buildFile(filename, content) {
 
     this.writeFile(Helpers.appRoot('/app/' + filename), content).then((data) => {
-      console.info(Helpers.appRoot('/app/' + filename))
-    }).catch((e) => console.info(e));
 
-    /*
-    return new Promise((resolve, reject) => {
-      fs.writeFile(filename, content, (err, data) => {
-        if(err) {
-          this.error(err);
-          return reject(err)
-        }
-        resolve(data)
-      });
-    });
-    */
+    }).catch((e) => console.info(e));
   }
 
 

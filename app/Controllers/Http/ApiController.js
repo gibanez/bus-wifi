@@ -9,7 +9,6 @@ class ApiController {
 
     const {page} = request.all();
     const data = request.all();
-    console.info(data, params)
 
     Object.keys(params).forEach(key => {
       data[key] = {eq:params[key]}

@@ -17,7 +17,6 @@ class ModelService {
   async findAll(page = 1, limit = 10, filters = {}) {
     const qb = this.model.query()
     this.setRelations(qb);
-    console.info(filters);
     this.setFilters(qb, filters)
 
     return await qb.paginate(page, limit);
@@ -66,13 +65,9 @@ class ModelService {
     } else {
       model = new this.model()
     }
-    console.info(data);
 
     Event.fire('model::before-save', data)
-
     model.merge(data)
-    console.info(data);
-
     await model.save()
     return model
 

@@ -20,5 +20,6 @@ Route.on('/').render('welcome')
 Route.group(() => {
   Route.resource('movie', 'MovieController');
   Route.get('media/sync', 'MediaController.sync').as('media.sync');
+  Route.get('media/image/:folder/:image', 'MediaController.image').as('media.image');
   Route.resource('media', 'MediaController');
 }).prefix('api');
