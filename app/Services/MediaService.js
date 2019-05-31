@@ -5,14 +5,16 @@ const Helpers = use('Helpers');
 const Route = use('Route')
 const Env = use('Env');
 const ModelService = use('App/Services/ModelService')
+//const ModelService = use('App/Services/ModelService')
 
 class MediaService extends ModelService {
   static get inject() {
-     return ['App/Models/Media', 'App/Services/CryptService']
+     return ['App/Models/Media', 'App/Services/CryptService', 'App/Services/FileSystemService']
   }
-  constructor(model, cryptService) {
+  constructor(model, cryptService, fileSystemService) {
     super(model);
     this.cryptService = cryptService;
+    this.fileSystemService = fileSystemService;
   }
 
   getRelations() {
@@ -98,6 +100,20 @@ class MediaService extends ModelService {
       const data = fs.readFileSync(folderPath);
       resolve(data);
     });
+  }
+
+  getMediaMovies() {
+    return this.fileSystemService.getDirectories(Env.get('PATH_MEDIA')).map(dir => {
+        return this.fileSystemService.getFiles(dir.realPath).filter(file => {
+          return ['avi', 'mp4'].includes(file.extension);
+        }).map(file => {
+          return {
+            name: dir.basename,
+            file,
+            hashPath: this.cryptService.encrypt(file.realPath)
+          }
+        }).shift();
+      });
   }
 }
 
