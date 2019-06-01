@@ -215,7 +215,7 @@ body {
   left: 0;
   top: 70px;
   height: calc(100% - 70px);
-  background-color: #ffffff;
+  background-color: #252525;
   overflow-x: hidden;
   overflow-y: auto;
   width: 300px;
@@ -305,7 +305,7 @@ body {
 #layout-sidebar .layout-menu > div {
   padding: 20px 15px;
   overflow: hidden;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
 
 #layout-sidebar .layout-menu > div.submenuhide {
@@ -417,7 +417,7 @@ body {
   display: block;
   padding: 30px;
   overflow: hidden;
-  background-color: #f5f7f8;
+  /*background-color: #f5f7f8;*/
 }
 
 .content-section.introduction {
@@ -466,7 +466,7 @@ body {
 /* Demos */
 .implementation,
 .implementation-charts {
-  background-color: #FFFFFF;
+  /*background-color: #FFFFFF;*/
   overflow: visible;
 }
 .implementation > h3 {

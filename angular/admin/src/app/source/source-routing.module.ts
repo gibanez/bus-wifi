@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent
+  },
+  {
+    path: 'actualizar',
+    component: RefreshComponent
   }
 ];
 
