@@ -7,9 +7,10 @@ class MediaSchema extends Schema {
   up () {
     this.create('media', (table) => {
       table.increments();
-      table.string('src', 100).notNullable().unique().index();
+      table.string('name', 100).notNullable();
       table.string('type', 100).notNullable();
       table.integer('duration');
+      table.string('hash', 100).notNullable().unique().index();
       table.timestamps();
     })
   }

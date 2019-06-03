@@ -19,10 +19,14 @@ class MediaController extends ApiController {
     return await this.service.getFolder(text || Env.get('PATH_MEDIA'));
   }
   scan ({request, response, params}) {
-
     return this.service.getMediaMovies();
-    return []
+  }
 
+  refresh({request, response, params}) {
+    const sources = this.service.getMediaMovies();
+    sources.map(source => {
+      this.service.saveIfNotExist(source);
+    });
   }
 
   async image({request, response, params}) {

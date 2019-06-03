@@ -1,0 +1,25 @@
+.menu {
+  width: 250px;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.sidenav-right {
+  width: 50%;
+}
+
+.container {
+  /*min-height: 800px;*/
+  top: 64px;
+}
+
+@media (max-width: 599px) {
+  .container {
+    top: 56px;
+  }
+}
+
+
+.icon-menu-spacer {
+  margin-bottom: 5px;
+}

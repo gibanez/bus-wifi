@@ -1,0 +1,121 @@
+<app-header
+  (onMenuClick)="opened = !opened"
+  (onSettingClick)="toggleSetting()"
+></app-header>
+<mat-sidenav-container class="container" style="overflow: hidden; height: 90vh;">
+  <mat-sidenav class="menu" [(mode)]="mode" [(opened)]="opened">
+    <menu-profile></menu-profile>
+    <menu></menu>
+  </mat-sidenav>
+
+  <mat-sidenav
+    class="sidenav-right"
+    [(opened)]="onToggleSetting"
+    #sidenavRight
+    position="end"
+    mode="over">
+
+    <mat-tab-group>
+      <mat-tab label="Perfil">Contenido del perfil</mat-tab>
+      <mat-tab label="Configuracion">Contenido del perfil</mat-tab>
+      <mat-tab label="Ayuda">Contenido del perfil</mat-tab>
+    </mat-tab-group>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!--
+<mat-toolbar class="mat-elevation-z6" style="position: fixed; z-index: 99999999999;">
+  <button mat-icon-button (click)="toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Administrador</span>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>account_box</mat-icon>
+  </button>
+
+  <button mat-icon-button matTooltip="Tiene 15 pedidos">
+    <mat-icon matBadge="15" matBadgeColor="accent">local_shipping</mat-icon>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" style="z-index: 9999999999;">
+    <button mat-menu-item>
+      <mat-icon>fingerprint</mat-icon>
+      <span>Login</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>announcement</mat-icon>
+      <span>Login</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>notifications_off</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="container" style="overflow: hidden; height: 90vh;">
+  <mat-sidenav class="menu" [(mode)]="mode" [(opened)]="opened">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>German Ibañez</mat-card-title>
+        <mat-card-subtitle>Administrador</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-accordion class="menu-height">
+      <mat-expansion-panel *ngFor="let m of menu;">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{m.name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <mat-list-item *ngFor="let item of m.items">
+            <mat-icon matListIcon>{{item.icon}}</mat-icon>
+            <a matLine [routerLink]="item.path">{{item.label}}</a>
+          </mat-list-item>
+        </mat-nav-list>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+  </mat-sidenav>
+
+  <mat-sidenav
+    class="sidenav-right"
+    #sidenavRight
+    position="end"
+    mode="over">
+
+    <mat-tab-group>
+      <mat-tab label="Perfil">Contenido del perfil</mat-tab>
+      <mat-tab label="Configuracion">Contenido del perfil</mat-tab>
+      <mat-tab label="Ayuda">Contenido del perfil</mat-tab>
+    </mat-tab-group>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<router-outlet></router-outlet>
+-->

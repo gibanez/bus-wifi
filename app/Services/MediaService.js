@@ -115,6 +115,18 @@ class MediaService extends ModelService {
         }).shift();
       });
   }
+
+  saveIfNotExist(data) {
+      console.info(data);
+      this.model.findOrCreate({
+        hash: data.hashPath
+      }, {
+        hash: data.hashPath,
+        type: data.file.extension,
+        name: data.name
+      })
+  }
+
 }
 
 module.exports = MediaService

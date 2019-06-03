@@ -13,4 +13,8 @@ export class SourceService extends HttpService {
   getScan() {
     return this.get('media/scan');
   }
+
+  refresh() {
+    return this.post('media/refresh', {overWrite: true});
+  }
 }

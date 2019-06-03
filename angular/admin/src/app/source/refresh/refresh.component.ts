@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SourceService} from 'src/app/source/source.service';
 
 @Component({
   selector: 'app-refresh',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RefreshComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sourceService: SourceService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  refresh() {
+    this.sourceService.refresh().subscribe(data => {
+      console.info(data);
+    });
   }
 
 }

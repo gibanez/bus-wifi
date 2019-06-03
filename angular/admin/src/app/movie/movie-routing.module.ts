@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {FormComponent} from 'src/app/movie/form/form.component';
+import {FormMovieComponent} from 'src/app/movie/form-movie/form-movie.component';
 import {IndexComponent} from 'src/app/movie/index/index.component';
 import {ScanComponent} from 'src/app/movie/scan/scan.component';
 
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'crear',
-    component: FormComponent
+    component: FormMovieComponent
   },
   {
     path: 'scan',

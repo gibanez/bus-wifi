@@ -10,7 +10,7 @@ import {
   ListboxModule,
   DropdownModule,
   PanelModule,
-  DialogModule
+  DialogModule, InputTextModule, EditorModule, MessagesModule, MessageModule, InputTextareaModule
 } from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import {PanelMenuModule} from 'primeng/panelmenu';
@@ -32,7 +32,11 @@ const MODULES = [
   DropdownModule,
   PanelModule,
   DialogModule,
-  TableModule
+  TableModule,
+  InputTextModule,
+  MessagesModule,
+  MessageModule,
+  InputTextareaModule
 ];
 
 @NgModule({

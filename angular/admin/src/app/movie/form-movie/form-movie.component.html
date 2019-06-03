@@ -1,0 +1,47 @@
+<app-header-component title="Pelicula"></app-header-component>
+<div class="content-section implementation">
+  <form [formGroup]="form" (ngSubmit)="save()">
+
+
+  <div class="ui-fluid">
+
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        Carpeta
+      </div>
+      <div class="ui-g-8">
+        <p-dropdown [options]="sources"
+                    formControlName="source"
+                    placeholder="Select a City"
+                    optionLabel="name"
+                    (onChange)="onChange($event)"
+                    [showClear]="true"></p-dropdown>
+
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        Pelicula
+      </div>
+      <div class="ui-g-8">
+        <input id="name" type="text" size="30" pInputText formControlName="name" autocomplete="off">
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">
+        Sinopsis
+      </div>
+      <div class="ui-g-8">
+        <textarea id="description" rows="5" cols="30" formControlName="description" pInputTextarea></textarea>
+      </div>
+    </div>
+
+    <div class="ui-g-12">
+      <p-message severity="error" text="Firstname is required" *ngIf="!form.controls['name'].valid&&form.controls['name'].dirty"></p-message>
+      <button pButton label="Guardar" type="submit"></button>
+
+    </div>
+
+  </div>
+  </form>
+</div>
